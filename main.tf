@@ -57,6 +57,7 @@ resource "aws_instance" "web" {
 
   vpc_security_group_ids = [aws_security_group.web_sg.id]
   key_name               = var.key_name
+  associate_public_ip_address = var.public_instance
 
   user_data = base64encode(local.userdata)
 
